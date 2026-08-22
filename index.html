@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Monica Thaise — Gestão de Conteúdos Empresariais</title>
+<meta name="description" content="Monica Thaise cria conteúdo que conecta, engaja e gera resultados para marcas de Patos, Santa Luzia e região.">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FAF3EA;
+    --cream-2:#F3E9DC;
+    --brown:#3C2A22;
+    --brown-2:#5A3B2E;
+    --brick:#B23A2E;
+    --brick-dark:#8F2C22;
+    --rose:#F4D8D6;
+    --rose-line:#E3B3AE;
+    --black:#151110;
+    --gold:#C79A56;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Inter',sans-serif;
+    background:var(--cream);
+    color:var(--brown);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 32px;}
+
+  /* NAV */
+  header.nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(250,243,234,0.88);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid rgba(60,42,34,0.08);
+  }
+  .nav-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:16px 32px;max-width:1180px;margin:0 auto;
+  }
+  .nav-mark{height:36px;width:auto;display:block;}
+  .nav-links{display:flex;gap:28px;font-size:0.92rem;font-weight:500;letter-spacing:0.01em;}
+  .nav-links a{text-decoration:none;opacity:0.8;transition:opacity .2s;}
+  .nav-links a:hover{opacity:1;}
+  .nav-cta{
+    background:var(--brown);color:var(--cream);
+    padding:10px 20px;border-radius:100px;
+    font-size:0.88rem;font-weight:600;text-decoration:none;
+    white-space:nowrap;
+  }
+  @media(max-width:720px){ .nav-links{display:none;} }
+
+  /* HERO */
+  .hero{
+    display:grid;grid-template-columns:1fr 1fr;
+    min-height:88vh;align-items:stretch;
+  }
+  .hero-photo{position:relative;overflow:hidden;}
+  .hero-photo img{width:100%;height:100%;object-fit:cover;object-position:38% 30%;min-height:420px;}
+  .hero-photo::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg, rgba(21,17,16,0) 55%, rgba(21,17,16,0.35) 100%);
+  }
+  .hero-tag{
+    position:absolute;left:24px;bottom:24px;z-index:2;
+    background:rgba(250,243,234,0.92);
+    padding:10px 16px;border-radius:100px;
+    font-size:0.82rem;font-weight:600;color:var(--brown);
+    display:flex;align-items:center;gap:8px;
+  }
+  .hero-tag::before{content:"🎤";}
+  .hero-copy{
+    display:flex;flex-direction:column;justify-content:center;
+    padding:64px 56px;gap:22px;
+  }
+  .eyebrow{
+    text-transform:uppercase;letter-spacing:0.14em;font-size:0.75rem;
+    font-weight:700;color:var(--brick);
+  }
+  .hero-copy h1{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    font-size:clamp(2.6rem, 5vw, 4.2rem);
+    line-height:0.98;
+    color:var(--brown);
+  }
+  .hero-copy h1 em{
+    font-style:italic;font-weight:500;color:var(--brick);
+  }
+  .hero-copy p{
+    font-size:1.08rem;max-width:440px;color:var(--brown-2);
+  }
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:6px;}
+  .btn-primary{
+    background:var(--brick);color:var(--cream);
+    padding:15px 28px;border-radius:100px;
+    font-weight:600;text-decoration:none;font-size:0.95rem;
+    box-shadow:0 8px 20px rgba(178,58,46,0.28);
+    transition:transform .2s ease;
+  }
+  .btn-primary:hover{transform:translateY(-2px);}
+  .btn-ghost{
+    border:1.5px solid var(--brown);
+    padding:14px 26px;border-radius:100px;
+    font-weight:600;text-decoration:none;font-size:0.95rem;
+  }
+  @media(max-width:860px){
+    .hero{grid-template-columns:1fr;}
+    .hero-photo{min-height:52vh;}
+    .hero-copy{padding:40px 24px;}
+  }
+
+  /* STRIP STATEMENT */
+  .statement{
+    background:var(--brown);color:var(--cream);
+    padding:90px 0;
+  }
+  .statement-inner{
+    display:grid;grid-template-columns:1.1fr 0.9fr;gap:56px;align-items:center;
+  }
+  .statement h2{
+    font-family:'Fraunces',serif;font-weight:500;
+    font-size:clamp(1.7rem,3vw,2.5rem);line-height:1.28;
+  }
+  .statement h2 span{color:#E8B9A9;font-style:italic;}
+  .statement-photo{
+    border-radius:18px;overflow:hidden;
+    box-shadow:0 30px 60px rgba(0,0,0,0.35);
+    transform:rotate(-1.5deg);
+  }
+  .statement-photo img{aspect-ratio:4/5;object-fit:cover;}
+  .statement-list{margin-top:26px;display:flex;flex-direction:column;gap:14px;font-size:0.98rem;color:#EBD9CD;}
+  .statement-list div{display:flex;gap:10px;align-items:flex-start;}
+  .statement-list div::before{content:"—";color:var(--gold);flex:none;}
+  @media(max-width:860px){
+    .statement-inner{grid-template-columns:1fr;}
+    .statement-photo{order:-1;transform:none;max-width:320px;margin:0 auto;}
+  }
+
+  /* SERVICES */
+  .services{padding:100px 0 60px;}
+  .section-head{max-width:640px;margin:0 auto 56px;text-align:center;}
+  .section-head .eyebrow{display:block;margin-bottom:14px;}
+  .section-head h2{
+    font-family:'Fraunces',serif;font-weight:600;
+    font-size:clamp(2rem,3.4vw,2.8rem);color:var(--brown);
+  }
+  .section-head p{margin-top:14px;color:var(--brown-2);font-size:1.02rem;}
+
+  .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+  .plan{
+    background:#fff;border:1px solid rgba(60,42,34,0.1);
+    border-radius:20px;padding:34px 28px;display:flex;flex-direction:column;
+    position:relative;transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .plan:hover{transform:translateY(-6px);box-shadow:0 24px 40px rgba(60,42,34,0.12);}
+  .plan.featured{
+    background:var(--brown);color:var(--cream);
+    border-color:var(--brown);
+  }
+  .plan-chip{
+    display:inline-block;background:var(--rose);color:var(--brick-dark);
+    font-size:0.72rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;
+    padding:6px 12px;border-radius:100px;margin-bottom:18px;width:fit-content;
+  }
+  .plan.featured .plan-chip{background:rgba(255,255,255,0.14);color:#EFC9B9;}
+  .plan h3{
+    font-family:'Fraunces',serif;font-weight:600;font-size:1.5rem;margin-bottom:14px;color:var(--brown);
+  }
+  .plan.featured h3{color:var(--cream);}
+  .plan .price{
+    font-family:'Fraunces',serif;font-weight:600;color:var(--brick);
+    font-size:2.3rem;margin-bottom:6px;
+  }
+  .plan.featured .price{color:#F2B9A6;}
+  .plan .price sup{font-size:1rem;font-weight:500;}
+  .plan .per{font-size:0.85rem;color:var(--brown-2);margin-bottom:20px;}
+  .plan.featured .per{color:#D9C3B6;}
+  .plan .desc{font-size:0.92rem;color:var(--brown-2);margin-bottom:22px;}
+  .plan.featured .desc{color:#E4D2C6;}
+  .plan ul{list-style:none;display:flex;flex-direction:column;gap:12px;margin-bottom:28px;flex:1;}
+  .plan li{font-size:0.92rem;padding-left:22px;position:relative;color:var(--brown);}
+  .plan.featured li{color:#F2E9E0;}
+  .plan li::before{
+    content:"✓";position:absolute;left:0;top:0;
+    color:var(--brick);font-weight:700;
+  }
+  .plan.featured li::before{color:#EFC9B9;}
+  .plan-note{
+    font-size:0.8rem;background:var(--rose);color:var(--brick-dark);
+    padding:10px 14px;border-radius:10px;margin-bottom:20px;
+  }
+  .plan-cta{
+    text-align:center;padding:13px;border-radius:100px;
+    text-decoration:none;font-weight:600;font-size:0.92rem;
+    border:1.5px solid var(--brown);color:var(--brown);
+    margin-top:auto;
+  }
+  .plan.featured .plan-cta{
+    background:var(--brick);border-color:var(--brick);color:var(--cream);
+  }
+  @media(max-width:920px){ .plans{grid-template-columns:1fr;} }
+
+  /* GALLERY */
+  .gallery{padding:70px 0 100px;}
+  .gallery-grid{
+    display:grid;grid-template-columns:1.3fr 1fr 1fr;grid-template-rows:auto auto;gap:18px;
+  }
+  .gallery-grid img{width:100%;height:100%;object-fit:cover;border-radius:16px;}
+  .g1{grid-row:span 2;aspect-ratio:3/4;object-position:center 15%;}
+  .g2,.g3{aspect-ratio:1/1;}
+  .g2{object-position:center 10%;}
+  .g3{object-position:center 5%;}
+  @media(max-width:760px){
+    .gallery-grid{grid-template-columns:1fr 1fr;}
+    .g1{grid-column:span 2;aspect-ratio:16/9;grid-row:auto;}
+  }
+
+  /* FOOTER / CTA BLOCK */
+  footer{
+    background:var(--black);color:var(--cream);
+    padding:90px 0 40px;
+  }
+  .footer-inner{text-align:center;}
+  .footer-mark{
+    display:flex;flex-direction:column;align-items:center;
+  }
+  .footer-mark img{
+    width:clamp(220px,32vw,380px);height:auto;
+  }
+  .footer-mark span{
+    display:block;font-family:'Inter',sans-serif;
+    font-weight:700;letter-spacing:0.4em;text-transform:uppercase;
+    font-size:0.9rem;color:var(--brick);margin-top:14px;
+  }
+  footer p.tag{margin-top:20px;color:#C9BDB4;font-size:1rem;}
+  .footer-cta{
+    margin-top:34px;display:inline-flex;gap:16px;flex-wrap:wrap;justify-content:center;
+  }
+  .footer-divider{
+    margin:56px 0 28px;border:none;border-top:1px solid rgba(255,255,255,0.12);
+  }
+  .footer-bottom{
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
+    font-size:0.8rem;color:#8A7C74;
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <img class="nav-mark" src="images/logo-dark.png" alt="Monica Thaise">
+    <nav class="nav-links">
+      <a href="#sobre">Sobre</a>
+      <a href="#pacotes">Pacotes</a>
+      <a href="#galeria">Galeria</a>
+    </nav>
+    <a class="nav-cta" href="https://wa.me/5583991864290" target="_blank" rel="noopener">Fale comigo</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-photo">
+    <img src="images/hero.jpg" alt="Monica Thaise em cobertura de evento, microfone São João Santa Luzia">
+    <span class="hero-tag">Cobertura ao vivo, todo mês</span>
+  </div>
+  <div class="hero-copy">
+    <span class="eyebrow">Mídia Kit · Gestão de Conteúdos Empresariais</span>
+    <h1>Conteúdo que <em>conecta</em>,<br>engaja e gera<br>resultado real.</h1>
+    <p>Produção de conteúdo e presença digital para marcas de Patos, Santa Luzia e região — do lançamento à gestão contínua do Instagram.</p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="https://wa.me/5583991864290" target="_blank" rel="noopener">Solicitar proposta</a>
+      <a class="btn-ghost" href="#pacotes">Ver pacotes</a>
+    </div>
+  </div>
+</section>
+
+<section class="statement" id="sobre">
+  <div class="wrap statement-inner">
+    <div>
+      <span class="eyebrow" style="color:#E8B9A9;">Sobre o trabalho</span>
+      <h2 style="margin-top:14px;">Cada marca tem uma história.<br><span>Eu levo essa história até o feed — e até o cliente.</span></h2>
+      <div class="statement-list">
+        <div>Cobertura em loja: fotos e vídeos gravados no próprio ponto de venda</div>
+        <div>Roteiro pensado para o público da região, sem forçar tendência genérica</div>
+        <div>Material entregue pronto para o Instagram da marca</div>
+      </div>
+    </div>
+    <div class="statement-photo">
+      <img src="images/dispensario.jpg" alt="Monica Thaise gravando conteúdo dentro de farmácia/loja de suplementos">
+    </div>
+  </div>
+</section>
+
+<section class="services" id="pacotes">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Pacotes</span>
+      <h2>Um formato para cada momento da marca</h2>
+      <p>Do lançamento pontual à gestão completa do Instagram, com planejamento alinhado ao calendário sazonal da sua região.</p>
+    </div>
+
+    <div class="plans">
+      <div class="plan">
+        <span class="plan-chip">Pacote Começar</span>
+        <h3>Ação de Lançamento</h3>
+        <div class="price">R$ 300</div>
+        <div class="per">pagamento único</div>
+        <div class="desc">Ação completa para inaugurações, lançamentos, promoções e eventos.</div>
+        <ul>
+          <li>5 Stories de divulgação</li>
+          <li>1 Reels publicado em collab com a empresa</li>
+          <li>1 Reels de apresentação do ambiente para uso nas redes da marca</li>
+          <li>Stories de pós-ação para reforçar a experiência</li>
+        </ul>
+        <a class="plan-cta" href="https://wa.me/5583991864290" target="_blank" rel="noopener">Quero este pacote</a>
+      </div>
+
+      <div class="plan featured">
+        <span class="plan-chip">Pacote Crescer</span>
+        <h3>Experiência de Destaque da Marca</h3>
+        <div class="price">R$ 600<sup>/mês</sup></div>
+        <div class="per">presença contínua</div>
+        <div class="desc">Planejamento alinhado às ações e necessidades da marca, mês a mês.</div>
+        <ul>
+          <li>Publicações 3 vezes por semana</li>
+          <li>Stories com novidades, promoções e lançamentos</li>
+          <li>1 Reels por semana no perfil da influenciadora</li>
+          <li>Materiais enviados para uso nas redes sociais da empresa</li>
+        </ul>
+        <div class="plan-note" style="background:rgba(255,255,255,0.12);color:#F2E4DA;">Não inclui a gestão do Instagram da empresa.</div>
+        <a class="plan-cta" href="https://wa.me/5583991864290" target="_blank" rel="noopener">Quero este pacote</a>
+      </div>
+
+      <div class="plan">
+        <span class="plan-chip">Pacote Dominar</span>
+        <h3>Gestão + Destaque da Marca</h3>
+        <div class="price">R$ 800<sup>/mês</sup></div>
+        <div class="per">solução completa</div>
+        <div class="desc">Toda a rotina de conteúdo e organização do perfil sob minha responsabilidade.</div>
+        <ul>
+          <li>3 publicações por semana, Stories e Reels regulares</li>
+          <li>Criação de banners e materiais informativos</li>
+          <li>Calendário sazonal alinhado às necessidades da marca</li>
+          <li>Gestão da rede social da empresa incluída</li>
+        </ul>
+        <a class="plan-cta" href="https://wa.me/5583991864290" target="_blank" rel="noopener">Quero este pacote</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery" id="galeria">
+  <div class="wrap">
+    <div class="section-head" style="margin-bottom:40px;">
+      <span class="eyebrow">Galeria</span>
+      <h2>Bastidores do trabalho</h2>
+    </div>
+    <div class="gallery-grid">
+      <img class="g1" src="images/saojoao.jpg" alt="Monica Thaise em cobertura do São João de Santa Luzia">
+      <img class="g2" src="images/loja.jpg" alt="Monica Thaise em ação de marca em posto/conveniência">
+      <img class="g3" src="images/flores.jpg" alt="Monica Thaise em evento de moda em Patos-PB">
+    </div>
+  </div>
+</section>
+
+<footer id="contato">
+  <div class="wrap footer-inner">
+    <div class="footer-mark"><img src="images/logo-light.png" alt="Monica Thaise"><span>Gestão de Conteúdos Empresariais</span></div>
+    <p class="tag">Vamos colocar sua marca em movimento?</p>
+    <div class="footer-cta">
+      <a class="btn-primary" href="https://wa.me/5583991864290" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+      <a class="btn-ghost" style="border-color:#5A4A42;color:var(--cream);" href="https://instagram.com/monicathaise1" target="_blank" rel="noopener">Ver Instagram</a>
+    </div>
+    <hr class="footer-divider">
+    <div class="footer-bottom">
+      <span>© 2026 Monica Thaise — Gestão de Conteúdos Empresariais</span>
+      <span>Patos · Santa Luzia · Região</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
